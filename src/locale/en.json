@@ -1,0 +1,46 @@
+{
+    "common": {
+      "getCodes": "Get Country Codes",
+      "searchType": "Search Type",
+      "searchType.name": "Name",
+      "searchType.code": "Country Code",
+      "searchType.currency": "Currency",
+      "searchType.all": "All",
+      "search": "Search",
+      "submit": "submit"
+    },
+    "paletteItem": {
+      "code": "Code",
+      "capital": "Capital",
+      "population": "Population",
+      "region": "Region",
+      "view": "view"
+    },
+    "countryPage": {
+      "heding.commonInfo": "Common Information",
+      "heding.geography": "Geography",
+      "heding.codes": "Codes",
+
+      "row.commonName": "Common name",
+      "row.nativeName": "Native name",
+      "row.population": "Population",
+      "row.currencies": "Currencies",
+      "row.lang": "Languages",
+
+      "row.region": "Region",
+      "row.subregion": "Subregion",
+      "row.capital": "Capital",
+      "row.demonym": "Demonym",
+      "row.latlng": "Lat/Lng",
+      "row.area": "Area",
+      "row.borders": "Land borders",
+      "row.zones": "Time zones",
+
+      "row.alpha2code": "ISO 3166-1 alpha-2",
+      "row.alpha3code": "ISO 3166-1 alpha-3",
+      "row.numeric": "ISO 3166-1 numeric",
+      "row.calling": "International calling code",
+      "row.currencyCode": "ISO 4217 currency code",
+      "row.domain": "Top level domain"
+    }
+}

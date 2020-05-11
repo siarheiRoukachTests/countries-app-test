@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.header {
+    align-items: center;
+    display: flex;
+    background-color: $bgHeader;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    min-height: 10vh;
+    padding: 0 5%;
+
+    @media (min-width: $breakpointMobile) and (max-width: $breakpointTablet) {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.link {
+    color: $clPrimary;
+    font-weight: 700;
+    text-decoration: inherit;
+}
+
+.controls,
+.link {
+    @media (min-width: $breakpointMobile) and (max-width: $breakpointTablet) {
+        margin: 1rem 0;
+    }
+}

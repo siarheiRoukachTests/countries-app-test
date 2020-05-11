@@ -1,0 +1,46 @@
+{
+    "common": {
+      "getCodes": "Коды Стран",
+      "searchType": "Тип поиска",
+      "searchType.name": "Название",
+      "searchType.code": "Код страны",
+      "searchType.currency": "Валюта",
+      "searchType.all": "Все",
+      "search": "Поиск",
+      "submit": "Подтвердить"
+    },
+    "paletteItem": {
+      "code": "Код страны",
+      "capital": "Столица",
+      "population": "Население",
+      "region": "Регион",
+      "view": "Посмотреть"
+    },
+    "countryPage": {
+      "heding.commonInfo": "Общая информация",
+      "heding.geography": "Гео-данные",
+      "heding.codes": "Коды",
+
+      "row.commonName": "Распространенное название",
+      "row.nativeName": "Родное название",
+      "row.population": "Население",
+      "row.currencies": "Валюты",
+      "row.lang": "Языки",
+
+      "row.region": "Регион",
+      "row.subregion": "Субрегион",
+      "row.capital": "Столица",
+      "row.demonym": "Этнохороним",
+      "row.latlng": "ш./д.",
+      "row.area": "Площадь",
+      "row.borders": "Границы",
+      "row.zones": "Часовые пояса",
+
+      "row.alpha2code": "ISO 3166-1 alpha-2",
+      "row.alpha3code": "ISO 3166-1 alpha-3",
+      "row.numeric": "ISO 3166-1 numeric",
+      "row.calling": "Международный телефонный код",
+      "row.currencyCode": "ISO 4217 валютный код",
+      "row.domain": "Домен"
+    }
+}
