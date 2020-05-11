@@ -12,6 +12,7 @@ import { ButtonGeneric } from "../../../../ui/buttonGeneric/ButtonGeneric";
 const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(4, 0),
+    width: 240,
     [theme.breakpoints.down("md")]: {
       width: "80%",
     },
