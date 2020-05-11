@@ -25,7 +25,6 @@ import { getNumberFormatValue } from "../countryPallete";
 
 import {
   searchCountries,
-  searchCountriesReset,
   selectCountries,
   selectIsFetchingCountries,
   selectErrorCountries,
@@ -92,9 +91,6 @@ export const CountryDataDisplay = ({ countryCode }) => {
   useEffect(() => {
     if (errorFetching) return;
     dispatch(searchCountries(apiTypes.CODE, countryCode));
-    return () => {
-      dispatch(searchCountriesReset());
-    };
   }, [countryCode, dispatch, errorFetching]);
 
   useEffect(() => {

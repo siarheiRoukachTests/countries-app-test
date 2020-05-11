@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
+import * as qs from "query-string";
 import { useTranslation } from "react-i18next";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
@@ -9,7 +11,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
-import { searchCountries } from "../../slices/searchCountriesSlice";
+import {
+  searchCountries,
+  searchCountriesReset,
+} from "../../slices/searchCountriesSlice";
 import { searchCodesReset } from "../../slices/searchCodesSlice";
 import { apiTypes } from "../../lib/api";
 import { ButtonGeneric } from "../../../../ui/buttonGeneric/ButtonGeneric";
@@ -33,10 +38,28 @@ const useStyles = makeStyles((theme) => ({
 export const SearchCountry = () => {
   const classes = useStyles();
   const { t } = useTranslation();
+  let history = useHistory();
+  let location = useLocation();
   const dispatch = useDispatch();
 
   const [searchType, setSearchType] = useState("name");
   const [searchValue, setSearchValue] = useState("");
+
+  const fetchCountry = useCallback(
+    (searchType, searchValue) => {
+      dispatch(searchCodesReset());
+      dispatch(searchCountries(searchType, searchValue));
+    },
+    [dispatch]
+  );
+
+  useEffect(() => {
+    const { searchType: type, searchValue: value } = qs.parse(location.search);
+
+    type || (type && value)
+      ? fetchCountry(type, value)
+      : dispatch(searchCountriesReset());
+  }, [dispatch, fetchCountry, location.search]);
 
   useEffect(() => {
     searchType === apiTypes.ALL && setSearchValue("");
@@ -44,8 +67,9 @@ export const SearchCountry = () => {
 
   const formSubmit = (e) => {
     e.preventDefault();
-    dispatch(searchCodesReset());
-    dispatch(searchCountries(searchType, searchValue));
+    history.push({
+      search: "?" + new URLSearchParams({ searchType, searchValue }).toString(),
+    });
   };
 
   return (
